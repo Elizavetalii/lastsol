@@ -1,4 +1,4 @@
-CONTRACT_ADDRESS = '0x02390D3A802D4176daC42f4475E059148910d310'
+CONTRACT_ADDRESS = '0xcB6567d610fA363833B0F73f91b4471c735d9569'
 
 ABI = """
 [
@@ -94,6 +94,72 @@ ABI = """
 		],
 		"name": "adStatusChanged",
 		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "idAd",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "buyerId",
+				"type": "address"
+			}
+		],
+		"name": "buyEstate",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "idEstate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "price",
+				"type": "uint256"
+			}
+		],
+		"name": "createAd",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "size",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "estateAddress",
+				"type": "string"
+			},
+			{
+				"internalType": "enum EstateContract.EstateType",
+				"name": "esType",
+				"type": "uint8"
+			}
+		],
+		"name": "createEstate",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "deposit",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -243,16 +309,11 @@ ABI = """
 				"internalType": "uint256",
 				"name": "idAd",
 				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "buyerId",
-				"type": "address"
 			}
 		],
-		"name": "buyEstate",
+		"name": "statusAd",
 		"outputs": [],
-		"stateMutability": "payable",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -261,14 +322,9 @@ ABI = """
 				"internalType": "uint256",
 				"name": "idEstate",
 				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "price",
-				"type": "uint256"
 			}
 		],
-		"name": "createAd",
+		"name": "statusEstate",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -277,30 +333,13 @@ ABI = """
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "size",
+				"name": "amount",
 				"type": "uint256"
-			},
-			{
-				"internalType": "string",
-				"name": "estateAddress",
-				"type": "string"
-			},
-			{
-				"internalType": "enum EstateContract.EstateType",
-				"name": "esType",
-				"type": "uint8"
 			}
 		],
-		"name": "createEstate",
+		"name": "withDraw",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "deposit",
-		"outputs": [],
-		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -415,32 +454,6 @@ ABI = """
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "idAd",
-				"type": "uint256"
-			}
-		],
-		"name": "statusAd",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "idEstate",
-				"type": "uint256"
-			}
-		],
-		"name": "statusEstate",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
@@ -460,19 +473,6 @@ ABI = """
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "withDraw",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
