@@ -61,7 +61,8 @@ def login():
             return redirect(url_for('about', account=account))
         except Exception as e:
             return render_template('authorize.html',error=str(e))
-    return render_template("authorize.html")
+    else:
+        return render_template('authorize.html',error=str(e))
 
 @app.route('/about/<account>', methods=['GET', 'POST'])
 def about(account):

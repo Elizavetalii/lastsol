@@ -7,5 +7,5 @@
 geth --datadir data --networkid 12345 --unlock 0x5C01e16aCB7878621F43E1197f2A165D24d6c2B9 --allow-insecure-unlock --http --http.corsdomain="*" --http.api web3,eth,debug,personal,net,miner --miner.etherbase 0x5C01e16aCB7878621F43E1197f2A165D24d6c2B9
 
 geth attach --datadir data ipc:\\.\pipe\geth.ipc
-
+miner.start()
 eth.blockNumber

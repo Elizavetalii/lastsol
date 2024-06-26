@@ -16,16 +16,16 @@
                     <form method="post">
                         <div class="mb-3">
                             <label for="public_key" class="form-label">Введите публичный ключ</label>
-                            <input type="text" class="form-control" id="public_key" name="public_key" placeholder="~~~">
+                            <input type="text" class="form-control" id="public_key" name="public_key" placeholder="">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Введите пароль</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="...">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="">
                         </div>
                         <button type="submit" class="btn btn-secondary btn-lg">Войти</button>
     
                         {% if error %}
-                        <p style="color: rgb(105, 82, 207)">Ошибка: {{error}}</p>
+                        <p style="color: rgb(5, 8, 52)">Ошибка: {{error}}</p>
                         {% endif %}
                     </form>
                 </div>
